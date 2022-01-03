@@ -1,10 +1,11 @@
-package com.example.recipeappfirebase
+package com.example.recipeappfirebase.adapters
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipeappfirebase.databinding.RecipeRowBinding
+import com.example.recipeappfirebase.models.Recipe
 
 class RecipeAdapter(): RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder>() {
     private var recipes = listOf<Recipe>()

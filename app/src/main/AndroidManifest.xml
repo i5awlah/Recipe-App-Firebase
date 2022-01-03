@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RecipeAppFirebase">
         <activity
-            android:name=".AddRecipeActivity"
+            android:name=".activities.AddRecipeActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

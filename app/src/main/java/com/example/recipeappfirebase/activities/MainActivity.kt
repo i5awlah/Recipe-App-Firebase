@@ -1,4 +1,4 @@
-package com.example.recipeappfirebase
+package com.example.recipeappfirebase.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,8 @@ import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.recipeappfirebase.adapters.RecipeAdapter
+import com.example.recipeappfirebase.services.RecipeViewModel
 import com.example.recipeappfirebase.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
