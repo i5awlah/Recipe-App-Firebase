@@ -8,6 +8,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.google.gson.Gson
 
 class RecipeViewModel(application: Application) : AndroidViewModel(application) {
     private val db = Firebase.firestore
@@ -28,8 +29,9 @@ class RecipeViewModel(application: Application) : AndroidViewModel(application) 
             .addOnSuccessListener { result ->
                 for (document in result) {
                     val id = document.id
-                    val data = document.data as Map<String, String>
-                        tempRecipes.add(Recipe(id, data["title"]!!,data["author"]!!,data["ingredients"]!!,data["instructions"]!!))
+                    val data = Gson().toJson(document.data)
+                    val docsData = Gson().fromJson(data, Recipe::class.java)!!
+                    tempRecipes.add(Recipe(id, docsData.title, docsData.author, docsData.ingredients, docsData.instructions))
                 }
                 recipes.postValue(tempRecipes)
             }
